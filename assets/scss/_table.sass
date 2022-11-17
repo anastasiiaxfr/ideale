@@ -1,0 +1,180 @@
+.table
+    color: $main
+    +ft(18, 26, 400)
+    border-collapse: separate
+    border-spacing: 0 10px
+    &>:not(caption)>*>*
+        border-bottom-width: 0
+    th
+        text-transform: uppercase
+        text-align: center
+        +ft(10, 23, 400)
+        &.table__name
+            text-align: left
+    tr
+        position: relative
+        padding-top: 15px
+        padding-bottom: 15px
+        &:first-child
+            border-bottom: 1px solid $blue
+    td
+        background: $blue
+        vertical-align: middle
+        text-align: center
+        &:first-child
+            border-radius: 10px 0 0 10px
+        &:last-child
+            border-radius: 0 10px 10px 0
+
+    &__name
+        width: 12%  
+        padding-left: 2%
+    &__num
+        position: relative
+        width: 64px    
+        span
+            border-radius: 10px
+            background: $grad2
+            color: $white
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            +ft(20, 23, 900)
+    
+    &__bonus
+        +ft(24, 26, 400)
+        text-transform: uppercase
+        color: $pink
+
+        span
+            color: $main
+            +ft(10, 23, 400)
+    
+    &__provider
+        display: block
+        text-align: left
+        +ft(16, 16, 700)
+
+    &__review
+        position: relative
+        z-index: 2
+        display: block
+        text-align: left
+        text-transform: uppercase
+        +ft(12, 12, 500)
+        letter-spacing: 2px
+        margin-top: 22px
+        width: auto
+        &::before
+            @extend %bd
+            width: 65px
+            bottom: 0
+        &:hover
+            &::before
+                width: 0
+    &__img
+        padding: 15px
+        width: 243px
+        height: 108px
+        overflow: hidden
+        img
+            max-width: 100%
+            width: 100%
+            height: 100%
+            border-radius: 10px
+            display: block
+            object-fit: cover
+            
+    &__footer
+        width: 300px
+        .table__review
+            display: none
+    +maw($sm)
+        thead
+            display: none
+        th
+            display: none
+        tr
+            display: flex
+            flex-wrap: wrap
+
+        td
+            display: block
+            width: 100%
+            padding: 0
+            &:last-child
+                border-radius: 0 0 10px 10px 
+            &:nth-child(2)
+                width: 100%
+        .table
+            &__num
+                display: inline-flex
+                position: absolute
+                left: 0
+                top: 15px
+                width: 30px
+                height: 108px
+                background: transparent
+                span
+                    border-radius: 0
+                    border-top-left-radius: 10px
+            &__img
+                max-width: 100%
+                width: 100%
+                border-radius: 10px
+                img
+                    width: 100%
+            &__review 
+                display: none
+            &__provider
+                padding-top: 15px
+                text-align: center
+            &__type
+                order: 1
+                display: none
+            &__bonus
+                order: 2
+                padding-bottom: 15px
+            &__footer
+                order: 3
+                display: flex
+                align-items: center
+                justify-content: space-around
+                border-top: 1px solid darken($blue, 10%)
+                border-radius: 0 0 10px 10px
+                padding: 15px 10px
+                .table__review
+                    display: block
+                    margin: 0
+
+            
+            
+.section_content
+    table
+        max-width: 100%
+        width: 100%
+        margin-top: 36px
+        margin-bottom: 36px
+        tr
+            &:nth-child(2n-1)
+                background-color: rgba($main, 0.08)
+            &:hover
+                background-color: rgba($main, 0.2)
+        td, th
+            padding: 15px 16px
+            
+        th
+            background-color: $main
+            color: $white
+            +ft(16, 26, 600)
+            &:first-child
+                border-radius: 10px 0 0 0
+            &:last-child
+                border-radius: 0 10px 0 0
+        td
+            +ft(16, 22, 400)

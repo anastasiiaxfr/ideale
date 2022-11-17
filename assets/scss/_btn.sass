@@ -1,0 +1,44 @@
+.btn
+    +flex(inline-flex, center, center, nowrap)
+    background: $pink3 $grad
+    box-shadow: 0 0 0 0.3125em  $pink3, 0px 9px 20px rgba(203, 1, 102, 0.5)
+    color: $white
+    border: none
+    border-radius: 20pc
+    transform: perspective(1px) translateZ(0)
+    position: relative
+    transition-property: color
+    transition-duration: .3s
+    +ft(18, 18, 700)
+    text-transform: uppercase
+    padding: 19px 30px
+
+    &:hover, &:focus, &:active
+        color: $white
+        box-shadow: none
+
+    &--blue
+        background: $grad2
+        box-shadow: 0 0 0 0.3125em  lighten(#6BC3FF, 20%)
+    &--text
+        background-color: transparent
+        border: none
+        color: $pink4
+        +ft(18, 18*1.5, 600)
+        &:hover
+            text-decoration: underline
+
+    &__show-more
+        position: relative
+        display: block
+        width: auto
+        text-transform: uppercase
+        background-color: transparent
+        border: none
+        +ft(18, 18, 700)
+        color: $main
+        &::before
+            @extend %bd
+        &:hover
+            &::before
+                display: none

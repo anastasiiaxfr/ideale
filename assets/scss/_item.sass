@@ -1,0 +1,43 @@
+.item
+    border-radius: 40px
+    text-align: center
+    background-color: $white
+    max-width: 435px
+    width: 435px
+    flex: 1 0 auto
+    &:nth-child(1)
+        transform: translate(50%) scale(0.8)
+       
+    &:nth-child(3)
+        transform: translate(-50%) scale(0.8)
+        z-index: 0
+       
+    &:nth-child(2)
+        z-index: 1
+        width: 100%
+        
+    &s
+        display: flex
+        flex-wrap: nowrap
+        margin-left: -20vw
+        margin-top: -20vh
+        transform: scale(0.8)
+    .btn
+        transform: translateY(50%)
+    &__title
+        +ft(24, 28, 500)
+    &-head
+        border-radius: 40px
+        min-height: 353px
+        overflow: hidden
+        position: relative
+
+        img
+            display: block
+            width: 100%
+        svg
+            position: absolute
+            bottom: -20px
+            left: 0
+    &-body
+        transform: translateY(-10px)

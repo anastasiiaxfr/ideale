@@ -1,0 +1,48 @@
+<!-- Footer -->
+<!--Main Footer-->
+<footer class="footer">
+    <div class="footer__top">
+        <div class="container">
+            <div class="row">
+      <ul class="footer__nav">
+        <li><a href="#">ideal casinos type</a></li>
+        <li><a href="#">casino reviews</a></li>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Disclaimer</a></li>
+        <li><a href="#">ideal casinos type</a></li>
+      </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer__btm">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-between">
+                {{ .Scratch.Set "img" .Site.Params.logo }}
+                {{ .Scratch.Set "logo_w" 226 }}
+                {{ .Scratch.Set "logo_h" 26 }}
+                {{- partial "_logo.html" . -}}
+        
+                <p>
+                    Copyright &copy; 2019 All right reserved by iDealecasino’s.nl
+                </p>
+
+                <div class="logos">
+                    <a href="#">
+                        <img src="images/logo1.svg" alt="ALT" width="" height="">
+                    </a>
+                    <a href="#">
+                        <img src="images/logo4.svg" alt="ALT" width="" height="">
+                    </a>
+                    <a href="#">
+                        <img src="images/logo2.svg" alt="ALT" width="" height="">
+                    </a>
+                    <a href="#">
+                        <img src="images/logo3.svg" alt="ALT" width="" height="">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!--Main Footer-->

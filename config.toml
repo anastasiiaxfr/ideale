@@ -1,0 +1,96 @@
+baseURL = "/"
+# canonifyURLs = true
+defaultContentLanguage = "ua"
+disableLanguages = []
+languageCode = "ua"
+paginate = "6"
+relativeURLs = true
+summaryLength = "50"
+title = "Главная"
+# [Languages.en]
+# contentDir = "content/en"
+# home = "Home"
+# languageCode = "en-us"
+# languageName = "En"
+# weight = 3
+[Languages.ru]
+contentDir = "content/ru"
+home = "Главная"
+languageCode = "ru"
+languageName = "Ру"
+weight = 2
+[Languages.ua]
+contentDir = "content/ua"
+home = "Головна"
+languageCode = "ua"
+languageName = "Укр"
+weight = 3
+[Languages.en]
+contentDir = "content/en"
+home = "Home"
+languageCode = "en"
+languageName = "ENG"
+weight = 1
+
+
+
+[[menu.header]]
+URL = "/#"
+name = "ideal casinos type"
+weight = 1
+[[menu.header]]
+URL = "/#"
+name = "casino reviews"
+weight = 2
+
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+[params]
+CIO_site_id = "XXX"
+GTM = "GTM-WHBQ3BV"
+develop = "xfr"
+
+
+address = "м. Київ Кловський узвіз, 7"
+email = "office@itg-investments.com"
+mobile = "+38 050 563 58 07"
+
+logo = "images/logo.svg"
+logo_dark = "images/logo.svg"
+
+site_name = "itg"
+site_url = "itg.com"
+
+tm_id = "5125757387"
+tm_token = "5601478768:AAFQjTOcFqol4WXcUwNf5JPEya8TJZIaHNo"
+
+[[params.plugins.js]]
+link = "plugins/js/jquery.min.js"
+[[params.plugins.css]]
+link = "/plugins/slick-1.8.1/slick/slick.css"
+[[params.plugins.css]]
+link = "/plugins/slick-1.8.1/slick/slick-theme.css"
+[[params.plugins.js]]
+link = "/plugins/slick-1.8.1/slick/slick.min.js"
+[[params.plugins.js]]
+link = "plugins/js/bootstrap.bundle.min.js"
+
+[[params.plugins.js]]
+link = "plugins/js/just-validate.min.js"
+[[params.plugins.js]]
+link = "plugins/js/smtp.js"
+
+
+[params.preloader]
+enable = true
+preloader = ""
+[sitemap]
+ChangeFreq = "daily"
+Priority = 0.6
+Weight = [["main", "1"], ["sub2", "0.8"], ["sub3", "0.6"]]
+enableRobotsTXT = true
+[taxonomies]
+author = "authors"
+category = "categories"
+tag = "tags"

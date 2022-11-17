@@ -1,0 +1,30 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ if $data._cta.cta }}
+{{ with $data._cta.cta }}
+
+<section class="section section_cta">
+<div class="section__container">
+<div class="section__row">
+
+<div class="col-md-8">
+
+    <h2>
+        {{ .title | markdownify | truncate 150 }}
+    </h2>
+    <div class="">
+        {{ .desc | markdownify | truncate 200 }}
+    </div>
+
+</div>
+
+<div class="col-md-4">
+
+</div>
+
+</div>
+</div>
+</section>
+
+{{ end }}
+{{ end }}

@@ -1,0 +1,26 @@
+.toc
+    border-radius: 10px
+    box-shadow: 5px 5px 12px 1px rgba($black, 0.1)
+    border-left: 4px solid rgba($pink2, 0.2)
+    padding: 16px 25px
+    &__title
+        +ft(18, 26, 700)
+        color: inherit
+        border: none
+        background-color: transparent
+        & svg
+            transform: rotate(180deg)
+        &.collapsed svg
+            transform: rotate(0deg)
+    &__list
+        text-transform: uppercase
+        +ft(14, 38, 400)
+        margin-top: 16px
+        a
+            position: relative
+            &:hover
+                &::before
+                    @extend %bd
+                    width: 100%
+    +maw($sm)
+        display: none

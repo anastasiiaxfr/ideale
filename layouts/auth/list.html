@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{ $data := index .Site.Data .Site.Language.Lang }}
+<div class="hero__wrap" style="background-image: url({{ `../images/hero2.jpg` | relURL }});">
+	<!-- BEGIN section -->
+	{{- partial "header.html" . -}}
+	
+	<!-- END section -->
+</div>
+
+<article class="page__main"> 
+	<section class="page__container">
+		<div class="container">
+			
+			<div class="page__single">
+				{{  .Content }}
+			</div>
+		
+		</div>
+	</section>
+</article>
+
+
+{{ end }}

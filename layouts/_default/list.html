@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="hero__wrap" style="background-image: url({{ `../images/hero.jpg` | relURL }});">
+  <!-- BEGIN section -->
+  {{- partial "header.html" . -}}
+  
+  {{- partial "_hero.html" . -}}
+  <!-- END section -->
+  </div>
+<article class="page__single">
+
+  {{- partial "header.html" . -}}
+
+  {{- partial "footer.html" . -}}
+
+</article>
+
+{{ end }}
+
+

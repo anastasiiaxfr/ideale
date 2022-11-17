@@ -1,0 +1,215 @@
+	
+$black: #000
+$white: #fff
+
+$main: #00497A
+
+$blue: #DDF5FF
+$blue2: #C3E9FA
+$blue3: #446286
+$pink: #F43695
+$pink2: #CB0166
+$pink3: #fe98cb
+$pink4: #E30F79
+
+$grad: linear-gradient(180deg,#ff007a 0%,#b8008f 100%)
+$grad2: linear-gradient(#6BC3FF, #008CEC)
+$grad3: linear-gradient(#0E9DFF, #035E9C)
+$grad4: radial-gradient(#0E9DFF, #035E9C)
+
+$ffHeading: 'Montserrat'
+$ffText: 'Montserrat'
+$ffBack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+
+$xlg: 1400
+$lg: 1150
+$md: 992
+$sm: 768
+$xs: 480
+$xxs: 420
+
+
+$trs: all 0.35s ease-in-out
+
+
+
+=ft($fz, $lh: 16, $fw: 400, $ff: $ffText)
+	$lh: $lh/$fz
+	$fz: $fz/16 + rem
+	$ff: $ff, $ffBack
+	font: $fw $fz/$lh $ff 
+
+
+=theme($theme)
+	@if $theme == dark
+		background-color: $black
+		color: $blue
+
+	@if $theme == white
+		background-color: $white
+		color: $blue
+
+	@if $theme == main
+		background-color: $main
+		color: $blue
+
+	@if $theme == light
+		background-color: rgba($yellow_light, 0.5)
+		color: $black
+
+
+
+=sz($w, $h)
+	width: $w
+	height: $h
+
+=flex($fx, $ai, $jc, $fxw)
+	display: $fx
+	align-items: $ai
+	justify-content: $jc
+	flex-wrap: $fxw
+
+
+// input +padding((t, 30px), (b, 40px))
+// +position(absolute, (t, 0), (r, 0))
+=position($ps, $val)
+	@each $x in $ps
+		@if $x == t
+			top: $val
+
+		@if $x == b
+			bottom: $val
+
+		@if $x == l
+			left: $val
+
+		@if $x == r
+			right: $val
+
+=ps($params...)
+	position: nth($params, 1)
+	@each $par, $val in $params
+		@if $par != null and $val != null
+			+position($par, $val)
+
+// input +padding((t, 30px), (b, 40px))
+=padding($pd, $val)
+	@if $pd == t
+		padding-top: $val
+
+	@if $pd == b
+		padding-bottom: $val
+
+	@if $pd == l
+		padding-left: $val
+
+	@if $pd == r
+		padding-right: $val
+
+	@if $pd == all
+		padding: $val
+
+	
+
+=pd($params...)
+	@each $par, $val in $params
+		@if $par != null and $val != null
+			+padding($par, $val)
+
+=margin($mg, $val)
+	@if $mg == t
+		margin-top: $val
+
+	@if $mg == b
+		margin-bottom: $val
+
+	@if $mg == l
+		margin-left: $val
+
+	@if $mg == r
+		margin-right: $val
+
+	@if $mg == all
+		margin: $val
+
+=mg($params...)
+	@each $par, $val in $params
+		@if $par != null and $val != null
+			+margin($par, $val)
+
+// =sp($prop, $params...)
+// 	@if $prop == mg
+// 		+mg($params)
+// 	@if $prop == pd 
+// 		+pd($params)	
+
+$i: 0
+=spacer($arr)
+	@for $val from 1 through length($arr) 
+		$spr: nth($arr, 1)
+	@if $spr == mg
+		@for $i from 2 through length($arr)
+			$props: nth($arr, $i)
+			+margin($props...)
+	@if $spr == pd
+		@for $i from 2 through length($arr)
+			$props: nth($arr, $i)
+			+padding($props...)
+	
+=sp($x, $y)
+	+spacer($x)
+	+spacer($y)
+		
+	
+//+sp((mg, (l, 20px), (b, 15px)), (pd, (r, 10px)))
+
+	
+=maw($brkp)
+	@media only screen and (max-width: $brkp+"px")
+		@content
+
+=miw($brkp)
+	@media only screen and (min-width: $brkp+"px")
+		@content
+
+=mw($min, $max)
+	@media only screen and (min-width: $min+"px") and (max-width: $max+"px")
+		@content
+
+
+@function rem($val)
+	$res: $val/16 + rem
+	@return $res
+
+@function em($val)
+	$res: $val/16 + em
+	@return $res 
+
+
+
+//  font-size: calc([minfz] + ([maxfz] - [minfz]) * ((100vw - [miw]) / ([maw] - [miw])));
+	
+=rfz($maw, $miw, $minfz, $maxfz)
+	$maw : $maw + px
+	$miw : $miw + px
+	$minfz : $minfz + px
+	$maxfz : $maxfz + px	
+	@media only screen and (min-width: $miw) 
+		font-size: calc(#{$minfz} + (#{$maxfz} - #{$minfz}) * ((100vw - #{$miw}) / (#{$maw} - #{$miw})))
+
+	@media only screen and (min-width: $maw)
+		font-size: $maxfz
+	
+// +rfz(1120, 320, 12, 40)
+
+%bd
+	content: ''
+	display: inline-flex
+	align-items: center
+	border: 6px solid #F5CCE0
+	bottom: 4px
+	top: auto
+	border-width: 0 0 6px
+	position: absolute
+	width: 75%
+	z-index: -1

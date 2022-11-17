@@ -1,0 +1,117 @@
+.navbar
+    padding-top: 52px
+    &-toggler
+        &-close
+            display: none
+        &:focus
+            box-shadow: none
+    +maw($sm)
+        padding-top: 10px
+        &-nav
+            margin-top: 30px
+
++maw($xs)
+    .logo
+        width: 180px
+        img
+            width: 100%
+
+
+.nav
+    &-item
+        margin-right: 48px
+        &:last-child
+            margin-right: 0
+    &-link
+        color: $main
+        text-transform: uppercase
+        +ft(18, 18, 400)
+        
+        &:hover
+            text-shadow: 0 0 1px
+            color: $main      
+    +maw($sm)
+        &-item
+            margin-right: 0
+
+.footer
+    color: $blue3
+    .logos
+        a
+            display: inline-block
+            margin: 10px
+    &__btm
+        background-color: $blue2
+        padding: 40px
+
+        p
+            margin: 0
+            +ft(16, 22, 400)
+    &__top
+        position: relative
+        background: url(../images/bg-footer.svg)
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center top
+        padding-bottom: 73px
+        padding-top: 161px
+    &__nav
+        margin-left: auto
+        margin-right: auto
+        
+        width: auto
+        text-align: center
+
+        li
+            display: inline-flex
+            list-style-type: none
+            margin-right: 48px
+            &:last-child
+                margin-right: 0
+        a
+            position: relative
+            z-index: 1
+            display: inline-flex
+            width: auto
+            text-transform: uppercase
+            
+            cursor: pointer
+            &::before
+                @extend %bd
+                bottom: 5px
+                width: 100%
+           
+            &:hover
+                text-shadow: 0 0 1px
+                color: $main
+    +maw($sm)
+        &__nav
+            li
+                display: block
+                margin: 24px auto
+        &__btm
+            text-align: center
+        .logo
+            margin: 0 auto 17px
+        .logos
+            order: -1
+            margin-bottom: 38px
+
+
+
+
+.cat
+    background: transparent
+    border: none
+    text-transform: uppercase
+    +ft(24, 24*1.5, 500)
+    color: inherit
+    padding: 10px
+    margin-right: 10px
+    &:last-child
+        margin-right: 0
+    &:hover
+        text-shadow: 0 0 1px
+    &__wrap
+        margin-left: -10px
+        margin-bottom: 26px
