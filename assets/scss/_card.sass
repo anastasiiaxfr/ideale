@@ -29,22 +29,12 @@
         background: $grad
         color: $white
         border-radius: 10px
-        padding: 10px 7px
-        +ft(18, 24, 700)
-        @media only screen and (min-width: 992px) and (max-width: 1400px)
-            padding: 10px 15px
-            font-size: 14px
-
-    .btn
-        padding: 10px 20px
-        +ft(14, 14, 700)
-        @media only screen and (min-width: 992px) and (max-width: 1400px)
-            padding: 10px 15px
-            font-size: 10px
-
+        padding: 24px 18px
+        +ft(20, 24, 700)
+    &__btn
+        @extend .btn
     .rating
         position: absolute
         top: 21px
         right: 21px
         cursor: pointer
-        white-space: nowrap

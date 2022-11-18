@@ -7,35 +7,25 @@
         padding-top: calc(25vh + 20px)
     &_bg
         background-repeat: no-repeat
-        background-size: 100% auto
+        background-size: cover
         background-position: 50% 0
-        height: 112vh
+        min-height: 55vmax
+        margin-top: -10vh
     &_table
         padding-top: 0
-        h2
-            margin-bottom: 0
-
-+maw($sm) 
-    .section.section_preview
-        padding-bottom: 0 
-    .section.section_demo
-        padding-top: 0  
-        padding-bottom: 0
-    .section.section_table
-        padding-bottom: 0
-        padding-top: 30px
-    .section.section_content
-        padding-bottom: 0
-        padding-top: 0
-    
+    +maw($sm)
+        &_table
+            padding-bottom: 0
+        &_content
+            padding-top: 0
+        &_games
+            padding-top: 0
+       
 .img
     max-width: 100%
-    border-radius: 20px
+    border-radius: 10px
     overflow: hidden
     box-shadow: 0 0 0 5px #DDF5FF, 0 0 0 10px #F3FBFF
-    &-fluid
-        width: 100%
-        max-width: 100%
 
 .intro
     background-color: rgba($white, 0.9)
@@ -43,42 +33,10 @@
     padding: 16px
     +ft(16, 22, 400)
     max-width: 734px
+   
 
+    +maw($sm)
+        background-color: transparent
 
 .ratings
     white-space: nowrap
-
-.game
-    &__pic
-        img
-            max-width: 100%
-            width: 100%
-    &__title
-        +ft(42, 42*1.5, 600)
-        margin-top: 10px
-        margin-bottom: 10px
-    &__info
-        border: 1px solid $blue
-        border-radius: 10px
-        table
-            margin: 0 auto
-            th
-                background-color: $blue
-                color: $main
-                text-align: center
-                &:first-child
-                    border-radius: 10px 10px 0 0
-            tr
-                &:nth-child(2n-1)
-                    background-color: transparent
-                &:hover, &:nth-child(2n-1):hover
-                    background-color: $blue
-                    
-                    
-            td
-                &:first-child
-                    font-weight: bold
-                    width: 35%
-    +maw($xlg)
-        &__title
-            +ft(28, 38, 400)

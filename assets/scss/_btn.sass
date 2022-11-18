@@ -1,7 +1,7 @@
 .btn
     +flex(inline-flex, center, center, nowrap)
-    background: $pink3 $grad
-    box-shadow: 0 0 0 0.3125em  $pink3, 0px 9px 20px rgba(203, 1, 102, 0.5)
+    background: #fe98cb $grad
+    box-shadow: 0 0 0 0.3125em  #fe98cb, 0px 9px 20px rgba(203, 1, 102, 0.5)
     color: $white
     border: none
     border-radius: 20pc
@@ -16,17 +16,6 @@
     &:hover, &:focus, &:active
         color: $white
         box-shadow: none
-
-    &--blue
-        background: $grad2
-        box-shadow: 0 0 0 0.3125em  lighten(#6BC3FF, 20%)
-    &--text
-        background-color: transparent
-        border: none
-        color: $pink4
-        +ft(18, 18*1.5, 600)
-        &:hover
-            text-decoration: underline
 
     &__show-more
         position: relative

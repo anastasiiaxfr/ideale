@@ -3,19 +3,13 @@
     &-toggler
         &-close
             display: none
-        &:focus
+        &:focus, &:hover
             box-shadow: none
+
     +maw($sm)
         padding-top: 10px
         &-nav
             margin-top: 30px
-
-+maw($xs)
-    .logo
-        width: 180px
-        img
-            width: 100%
-
 
 .nav
     &-item
@@ -25,7 +19,7 @@
     &-link
         color: $main
         text-transform: uppercase
-        +ft(18, 18, 400)
+        +ft(18, 18, 600)
         
         &:hover
             text-shadow: 0 0 1px
@@ -33,6 +27,7 @@
     +maw($sm)
         &-item
             margin-right: 0
+            text-align: center
 
 .footer
     color: $blue3
@@ -74,16 +69,19 @@
             display: inline-flex
             width: auto
             text-transform: uppercase
-            
+            +ft(16, 16, 600)
             cursor: pointer
             &::before
                 @extend %bd
-                bottom: 5px
+                bottom: 0px
                 width: 100%
            
             &:hover
                 text-shadow: 0 0 1px
                 color: $main
+                transition: $trs
+                &::before
+                    width: 0
     +maw($sm)
         &__nav
             li
@@ -112,6 +110,18 @@
         margin-right: 0
     &:hover
         text-shadow: 0 0 1px
+        
     &__wrap
         margin-left: -10px
         margin-bottom: 26px
+        display: flex
+    +maw($sm)
+        background: $grad2
+        border-radius: 10px
+        color: $white
+        padding: 12px 20px
+        +ft(16, 16, 500)
+        &:hover, &:focus, &:active
+            background: $grad3
+        &__wrap
+            overflow-x: scroll
